@@ -13,6 +13,11 @@ const postSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Create an index 
+postSchema.index({ title: 1 }); 
+postSchema.index({ author: 1 }); 
+
+
 const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
 
 export default Post;

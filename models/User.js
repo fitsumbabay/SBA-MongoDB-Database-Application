@@ -25,6 +25,8 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+// Create an index 
+userSchema.index({ username: 1 }); 
 
 // Check if the model is already defined
 const User = mongoose.models.User || mongoose.model('User', userSchema);

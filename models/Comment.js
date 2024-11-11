@@ -9,6 +9,10 @@ const commentSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Create indexes explicitly in the schema
+commentSchema.index({ post: 1 });  // Index for post
+commentSchema.index({ author: 1 });  // Index for author
+
 // Check if the Comment model is already defined to avoid overwriting it
 const Comment = mongoose.models.Comment || mongoose.model('Comment', commentSchema);
 
